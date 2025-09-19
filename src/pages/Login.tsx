@@ -17,20 +17,15 @@ const Login = () => {
       navigate('/dashboard');
     }
   };
-
+  
   return (
-    <div className="min-h-screen bg-gradient-dashboard flex items-center justify-center p-4">
-      <Card className="w-full max-w-md shadow-card">
-        <CardHeader className="text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="p-2 rounded-lg bg-gradient-primary">
-              <Battery className="h-6 w-6 text-white" />
-            </div>
-            <Truck className="h-6 w-6 text-primary" />
-            <Shield className="h-6 w-6 text-status-normal" />
+    <div className="min-h-screen flex items-center justify-center bg-gray-900">
+      <Card className="w-full max-w-md">
+        <CardHeader className="space-y-1">
+          <div className="flex justify-center mb-4">
+            <Battery className="h-10 w-10 text-yellow-500" />
           </div>
-          <CardTitle className="text-2xl">Painel de Monitoramento</CardTitle>
-          <p className="text-muted-foreground">Logística e Riscos de Baterias</p>
+          <CardTitle className="text-2xl font-bold text-center">Painel de Monitoramento de Baterias</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -38,10 +33,9 @@ const Login = () => {
               <Label htmlFor="username">Usuário</Label>
               <Input
                 id="username"
-                type="text"
+                placeholder="Digite seu usuário"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="Digite seu usuário"
                 required
               />
             </div>
@@ -50,15 +44,13 @@ const Login = () => {
               <Input
                 id="password"
                 type="password"
+                placeholder="Digite sua senha"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Digite sua senha"
                 required
               />
             </div>
-            <Button type="submit" className="w-full">
-              Entrar
-            </Button>
+            <Button type="submit" className="w-full bg-blue-900 hover:bg-blue-800">Entrar</Button>
           </form>
         </CardContent>
       </Card>
